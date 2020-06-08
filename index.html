@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>eduk8s-dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css">
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <script src="https://unpkg.com/@clr/icons/clr-icons.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="clarity.js"></script>
+  <link rel="stylesheet" href="clarity.css">
+</head>
+
+<body>
+  <div class="main-container no-scroll">
+    <header class="header header-6">
+      <div class="branding">
+        <a href="..." class="nav-link">
+          <clr-icon shape="vm-bug"></clr-icon>
+          <span class="title">eduk8s dashboard</span>
+        </a>
+      </div>
+      <!--
+      <div class="header-nav">
+          <a href="..." class="active nav-link"><span class="nav-text">Dashboard</span></a>
+          <a href="..." class="nav-link"><span class="nav-text">Interactive Analytics</span></a>
+      </div>
+      -->
+    </header>
+    <div class="content-container">
+      <div class="content-area">
+        <div class="content-summary">
+          <!-- Here will go a summary of the selected/hover pod -->
+          <form class="clr-form clr-form-compact">
+            <div class="clr-form-control clr-row">
+              <label for="select-full" class="clr-control-label clr-col-12 clr-col-md-1">Group By</label>
+              <div class="clr-control-container clr-col-12 clr-col-md-4">
+                <div class="clr-select-wrapper">
+                  <select id="pods-grouped-by" class="clr-select" onchange="javascript: app.reload()">
+                    <option value="node">Node</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="namespace">Namespace</option>
+                  </select>
+                </div>
+              </div>
+              <div class="clr-control-container clr-col-12 clr-col-md-7">
+                <div class="clr-toggle-wrapper">
+                  <input type="checkbox" id="onlyeduk8s" name="toggle-basic" value="true" class="clr-toggle" onclick="console.log('click');clickOnlyEduk8s()">
+                  <label for="onlyeduk8s">Show only eduk8s workloads</label>
+                </div>
+              </div>
+            </div>
+            <div class="clr-form-control clr-row">
+              <label for="selectedpod-podname" class="clr-control-label clr-col-12 clr-col-md-1">Pod Name</label>
+              <div class="clr-control-container clr-col-12 clr-col-md-4"><input type="text" id="selectedpod-podname" class="clr-input"
+                  size="65"></div>
+              <label for="selectedpod-namespace" class="clr-control-label clr-col-12 clr-col-md-1">Namespace</label>
+              <div class="clr-control-container clr-col-12 clr-col-md-4"><input type="text" id="selectedpod-namespace" class="clr-input"
+                  size="65"></div>
+            </div>
+            <div class="clr-form-control clr-row">
+              <label for="selectedpod-podtype" class="clr-control-label clr-col-12 clr-col-md-1">Pod Type</label>
+              <div class="clr-control-container clr-col-12 clr-col-md-11"><input type="text" id="selectedpod-podtype" class="clr-input"
+                  size="65"></div>
+            </div>
+          </form>
+        </div>
+        <div class="content-main">
+          <ol class="grid-container container-fluid" id="content">
+          <!-- Here will go the content that app.js creates-->
+
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="clr-row clr-justify-content-around">
+      <div class="clr-col-4">
+        <span>All rights reserved by <a target="_blank"
+            href="eduk8s.io">eduk8s</a></span>
+      </div>
+      <div class="clr-col-6">
+        <button class="btn btn-link">
+          <a target="_blank" href="https://twitter.com/eduk8sio">
+            <i class="fa fa-twitter-square fa-2x"></i>
+          </a>
+        </button>
+
+        <button class="btn btn-link">
+          <a target="_blank" href="https://github.com/eduk8s">
+            <i class="fa fa-github-square fa-2x"></i>
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src='app.js'></script>
+</body>
+
+</html>

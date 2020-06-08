@@ -1,0 +1,154 @@
+
+.content-area {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1.8fr;
+    gap: 1px 1px;
+    grid-template-areas: "summary" "main";
+}
+
+.content-summary {
+    grid-area: summary;
+    align-self: start;
+    display: grid;
+}
+
+/*
+ * ol
+ */
+.grid-container {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 36px;
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+}
+
+@media (min-width: 1200px){
+.container-fluid {
+    padding-left: 72px;
+    padding-right: 72px;
+}
+}
+
+@media (min-width: 768px){}
+.container-fluid {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*
+ * li
+ */
+.group-box {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+    display: block;
+    background: transparent;
+}
+
+.group-box-div {
+    border: 5px;
+    border-color: #2949d8;
+    border-style: solid;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+/*
+ * div
+ */
+.group-container{
+    position: relative;
+    clear: left;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+    background: transparent;
+    display: table-row;
+}
+
+.group-text-div {
+    display: table-row;
+    height: 5%;
+}
+
+.group-text {
+    margin: 0;
+    text-align: center;
+}
+
+.content-main {
+    grid-area: main;
+    align-self: start;
+}
+
+.node {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    width: 10rem;
+    height: 10rem;
+    border-style: solid;
+    border-width: .125rem;
+}
+
+.control-plane {
+    background-color: #2949d8;
+    border-color: #032955;
+}
+
+.workload {
+    background-color: #97a9fc;
+    border-color: #032955;
+}
+.workshop {
+    background-color: #97a9fc;
+    border-color: #032955;
+}
+
+.pod {
+    min-width: 2em;
+    min-height: 2em;
+    max-width: 3em;
+    max-height: 3em;
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: white;
+}
+
+.trainingportal {
+    border-color: #0023A1;
+}
+
+.workshop {
+    border-color: rgb(108, 134, 228);
+}
+
+.registry {
+    border-color: rgb(0, 123, 161);
+}
+
+.regular {
+    border-color: #19a974;
+}
